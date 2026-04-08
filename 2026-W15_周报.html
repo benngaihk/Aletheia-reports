@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>周报 2026-W15</title>
+<style>
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1f2328;
+  background: #f6f8fa;
+  margin: 0;
+  padding: 16px;
+}
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 24px 20px;
+}
+header.report-header {
+  border-bottom: 2px solid #0969da;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+h1 { font-size: 1.6em; margin: 0 0 6px; color: #0969da; }
+.subtitle { color: #656d76; font-size: 0.9em; margin: 0; }
+section { margin: 28px 0; }
+h2 {
+  font-size: 1.25em;
+  color: #0969da;
+  border-left: 4px solid #0969da;
+  padding-left: 10px;
+  margin: 0 0 14px;
+}
+h3 { font-size: 1.05em; color: #24292f; margin: 18px 0 8px; }
+
+dl.meta-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0 0 14px;
+  font-size: 0.92em;
+}
+dl.meta-list dt { color: #656d76; font-weight: normal; }
+dl.meta-list dd { margin: 0; color: #24292f; font-weight: 500; }
+
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px -4px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
+th, td { padding: 7px 9px; text-align: left; border-bottom: 1px solid #eaecef; white-space: nowrap; }
+th { background: #f6f8fa; color: #24292f; font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.code { color: #656d76; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.95em; }
+tr:nth-child(even) td { background: #fbfcfd; }
+
+.win { color: #1a7f37; font-weight: 600; }
+.loss { color: #cf222e; font-weight: 600; }
+.muted { color: #8b949e; }
+td.hit { text-align: center; font-size: 1.1em; }
+.llm-low { color: #cf222e; }
+.llm-high { color: #1a7f37; }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+.stat {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.stat.highlight {
+  background: #ddf4ff;
+  border-color: #54aeff;
+}
+.stat-label { font-size: 0.78em; color: #656d76; margin-bottom: 2px; }
+.stat-val { font-size: 1.15em; font-weight: 600; color: #24292f; font-variant-numeric: tabular-nums; }
+.stat-sub { font-size: 0.8em; color: #8b949e; font-weight: normal; }
+
+ul.reason-list { list-style: none; padding: 0; margin: 0; }
+ul.reason-list > li {
+  border-left: 3px solid #d1d9e0;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  background: #fbfcfd;
+  border-radius: 0 4px 4px 0;
+}
+.reason-head { margin-bottom: 4px; }
+.reason-head .code { color: #656d76; font-family: ui-monospace, Menlo, monospace; font-size: 0.88em; }
+.reason-head .name { font-weight: 600; color: #24292f; margin-left: 6px; }
+.reason-body { color: #424a53; font-size: 0.9em; }
+.risk { margin-top: 6px; font-size: 0.85em; color: #9a6700; background: #fff8c5; padding: 4px 8px; border-radius: 4px; }
+.risk-label { font-weight: 600; margin-right: 4px; }
+
+aside.llm-block {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f6f8fa 100%);
+  border-left: 4px solid #0969da;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+.llm-title {
+  font-weight: 600;
+  color: #0969da;
+  font-size: 0.9em;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+.llm-title::before { content: "◆"; margin-right: 6px; font-size: 0.85em; }
+aside.llm-block p { margin: 6px 0; color: #24292f; font-size: 0.93em; }
+
+.empty { color: #8b949e; font-style: italic; padding: 10px 0; }
+
+footer.report-footer {
+  margin-top: 32px;
+  padding-top: 14px;
+  border-top: 1px solid #eaecef;
+  color: #8b949e;
+  font-size: 0.82em;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body { padding: 8px; font-size: 15px; }
+  main { padding: 16px 12px; border-radius: 6px; }
+  h1 { font-size: 1.35em; }
+  h2 { font-size: 1.1em; }
+  table { font-size: 0.82em; }
+  th, td { padding: 6px 7px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat { padding: 8px 10px; }
+  .stat-val { font-size: 1.05em; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="report-header">
+    <h1>周报 2026-W15</h1>
+    <p class="subtitle">复盘日 <strong>2026-04-07</strong> · 本周区间 2026-04-06 ~ 2026-04-12</p>
+  </header>
+
+  <section>
+    <h2>一、上周复盘</h2>
+    <dl class="meta-list">
+<dt>预测日</dt><dd>2026-03-30（持有 5 个交易日）</dd>
+<dt>方法</dt><dd>因子+LLM审核</dd>
+</dl>
+<div class="table-wrap"><table class="review-table">
+<thead><tr><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">当前价</th><th class="num">收益</th><th>命中</th></tr></thead><tbody>
+<tr><td class="code">sh.600718</td><td>东软集团</td><td class="num">9.11</td><td class="num">8.90</td><td class="num loss">-2.31%</td><td class="hit loss">✗</td></tr>
+<tr><td class="code">sh.603859</td><td>能科科技</td><td class="num">36.90</td><td class="num">35.55</td><td class="num loss">-3.66%</td><td class="hit loss">✗</td></tr>
+<tr><td class="code">sh.600552</td><td>凯盛科技</td><td class="num">12.10</td><td class="num">11.72</td><td class="num loss">-3.14%</td><td class="hit loss">✗</td></tr>
+<tr><td class="code">sh.603686</td><td>福龙马</td><td class="num">18.54</td><td class="num">17.89</td><td class="num loss">-3.51%</td><td class="hit loss">✗</td></tr>
+<tr><td class="code">sh.600613</td><td>神奇制药</td><td class="num">6.08</td><td class="num">6.54</td><td class="num win">+7.57%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.600201</td><td>生物股份</td><td class="num">14.27</td><td class="num">14.46</td><td class="num win">+1.33%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.603633</td><td>徕木股份</td><td class="num">7.67</td><td class="num">7.25</td><td class="num loss">-5.48%</td><td class="hit loss">✗</td></tr>
+<tr><td class="code">sh.600278</td><td>东方创业</td><td class="num">7.36</td><td class="num">7.00</td><td class="num loss">-4.89%</td><td class="hit loss">✗</td></tr>
+</tbody></table></div>
+<div class="summary-grid">
+<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val loss">-1.76%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">25% <span class="stat-sub">(2/8)</span></div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+7.57%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-5.48%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val loss">-1.14%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-0.62%</div></div>
+</div>
+    <aside class="llm-block"><div class="llm-title">复盘洞察 · MiniMax</div><p>上周策略平均收益 -1.76%，相对沪深300指数 -1.14% 产生约 -0.62% 的负超额收益，胜率仅为 25%（2/8 正收益）。所有入选股票的 LLM 风险评估均因解析失败而默认通过，导致未能过滤掉 ROE 为零、估值偏高、波动大的低质量标的，因而因子端的高分股票在实际走势中多数受挫。唯一实现正收益的神奇制药属于事件驱动，与因子逻辑关联不大。整体来看，因子信号在当前市场环境下出现逆流，风险控制的缺失是本次亏损的主因。</p></aside>
+  </section>
+
+  <section>
+    <h2>二、本周预测</h2>
+    <dl class="meta-list">
+<dt>预测日</dt><dd>2026-04-07</dd>
+<dt>方法</dt><dd>因子+LLM审核</dd>
+<dt>候选 / 入选</dt><dd>16 / 8</dd>
+<dt>生成时间</dt><dd>2026-04-07 17:41:15</dd>
+</dl>
+<div class="table-wrap"><table class="pick-table">
+<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">因子分</th><th class="num">LLM</th><th class="num">现价</th><th class="num">止损</th><th class="num">止盈</th><th class="num">月波动</th></tr></thead><tbody>
+<tr><td>2</td><td class="code">sz.301045</td><td>天禄科技</td><td class="num">1.135</td><td class="num llm-low">3.0</td><td class="num">37.31</td><td class="num">35.28</td><td class="num">49.33</td><td class="num">21.5%</td></tr>
+<tr><td>3</td><td class="code">sz.002666</td><td>德联集团</td><td class="num">1.132</td><td class="num llm-low">3.0</td><td class="num">5.37</td><td class="num">5.12</td><td class="num">6.54</td><td class="num">14.5%</td></tr>
+<tr><td>4</td><td class="code">sz.002029</td><td>七匹狼</td><td class="num">1.126</td><td class="num llm-low">3.0</td><td class="num">9.61</td><td class="num">9.19</td><td class="num">11.65</td><td class="num">14.1%</td></tr>
+<tr><td>6</td><td class="code">sz.000735</td><td>罗牛山</td><td class="num">1.096</td><td class="num llm-low">4.0</td><td class="num">6.62</td><td class="num">6.39</td><td class="num">7.70</td><td class="num">10.8%</td></tr>
+<tr><td>12</td><td class="code">sh.601616</td><td>广电电气</td><td class="num">0.985</td><td class="num llm-low">4.0</td><td class="num">4.63</td><td class="num">4.37</td><td class="num">5.98</td><td class="num">19.4%</td></tr>
+<tr><td>14</td><td class="code">sh.600021</td><td>上海电力</td><td class="num">0.974</td><td class="num ">5.0</td><td class="num">17.22</td><td class="num">16.55</td><td class="num">20.42</td><td class="num">12.4%</td></tr>
+<tr><td>15</td><td class="code">sh.601212</td><td>白银有色</td><td class="num">0.957</td><td class="num llm-low">3.0</td><td class="num">7.83</td><td class="num">7.44</td><td class="num">9.49</td><td class="num">14.1%</td></tr>
+<tr><td>16</td><td class="code">sz.002239</td><td>奥特佳</td><td class="num">0.951</td><td class="num llm-low">3.0</td><td class="num">2.94</td><td class="num">2.84</td><td class="num">3.38</td><td class="num">10.0%</td></tr>
+</tbody></table></div>
+<h3>入选理由</h3>
+<ul class="reason-list">
+<li>
+<div class="reason-head"><span class="code">sz.301045</span> <span class="name">天禄科技</span></div>
+<div class="reason-body">决策: 入选; 行业: C39计算机、通信和其他电子设备制造业; 因子排名: #2; 因子得分: 1.1346</div>
+<div class="risk"><span class="risk-label">风险</span> ROE近4季均为0%；PB处于历史92%分位估值偏高；短期涨幅过大(12月+68%)但无基本面支撑；高波动率49%；上市仅5年但ROE持续为零</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sz.002666</span> <span class="name">德联集团</span></div>
+<div class="reason-body">决策: 入选; 行业: C26化学原料和化学制品制造业; 因子排名: #3; 因子得分: 1.1315</div>
+<div class="risk"><span class="risk-label">风险</span> ROE全部季度为0%，持续8年无盈利；行业ROE排名290/351靠后；动量短期转正但不稳定；停牌203天异常多</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sz.002029</span> <span class="name">七匹狼</span></div>
+<div class="reason-body">决策: 入选; 行业: C18纺织服装、服饰业; 因子排名: #4; 因子得分: 1.1265</div>
+<div class="risk"><span class="risk-label">风险</span> ROE全部为0%；PB处于历史86%分位估值偏高；严重缩量(0.48x)；2026年已跌14.5%；停牌203天异常</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sz.000735</span> <span class="name">罗牛山</span></div>
+<div class="reason-body">决策: 入选; 行业: A03畜牧业; 因子排名: #6; 因子得分: 1.0965</div>
+<div class="risk"><span class="risk-label">风险</span> ROE极低(0.1%)但有上升趋势；2026年跌幅较大(-26.5%)；严重缩量0.49x；历史最大回撤-76%；停牌203天异常；相对其他标的风险略低</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sh.601616</span> <span class="name">广电电气</span></div>
+<div class="reason-body">决策: 入选; 行业: C38电气机械和器材制造业; 因子排名: #12; 因子得分: 0.9853</div>
+<div class="risk"><span class="risk-label">风险</span> ROE持续为0%，行业排名255/328(底部)；PB处于历史95%分位(极度高估)；1月动量-24.8%；虽然近期放量，但估值已创历史新高</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sh.600021</span> <span class="name">上海电力</span></div>
+<div class="reason-body">决策: 入选; 行业: D44电力、热力生产和供应业; 因子排名: #14; 因子得分: 0.9745</div>
+<div class="risk"><span class="risk-label">风险</span> ROE仅0.1%极低；PB处于历史93%分位(高估)；近1月/3月/6月动量均为负(-21%至-12%)，但12月动量+91%；近期大幅回撤-13%至-21%；2025年涨幅+130.8%后回调风险大</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sh.601212</span> <span class="name">白银有色</span></div>
+<div class="reason-body">决策: 入选; 行业: C32有色金属冶炼和压延加工业; 因子排名: #15; 因子得分: 0.9570</div>
+<div class="risk"><span class="risk-label">风险</span> ROE接近0%或负值，行业排名76/86(底部)；PB处于历史92-93%分位(极度高估)；12月动量+171%(短期暴涨)；历史最大回撤-70%；历年大幅亏损年份多(2018:-56.5%)</div>
+</li>
+<li>
+<div class="reason-head"><span class="code">sz.002239</span> <span class="name">奥特佳</span></div>
+<div class="reason-body">决策: 入选; 行业: C36汽车制造业; 因子排名: #16; 因子得分: 0.9514</div>
+<div class="risk"><span class="risk-label">风险</span> ROE持续为0%或负值，行业排名165/194(底部20%)；近1/3/6/12月动量均为负(持续下跌)；历史最大回撤-70%；2018年暴跌-50.5%；2020年暴涨+171%后连续两年-30%</div>
+</li>
+</ul>
+    <aside class="llm-block"><div class="llm-title">选股点评 · MiniMax</div><p>本周入选的 8 只股票普遍呈现 ROE 接近零、PB 处于历史 90% 分位以上、波动率 10%~21% 的特征，风险因素高度集中。LLM 评分仅在 3-5 分之间，风险提示涉及高估值、异常动量、长期停牌等多维度，说明整体质量偏低。因子强度从上期的 1.5+ 下降到 0.95-1.13，表明本批标的在因子层面的吸引力已减弱。持仓风格偏向高风险、低质量的逆向投机，需重点关注止损位与流动性风险。</p></aside>
+  </section>
+
+  <section>
+    <h2>三、整体总结与改进建议</h2>
+    <aside class="llm-block"><div class="llm-title">整体总结与改进建议 · MiniMax</div><p>整体来看，上周因因子信号失灵且风险过滤缺失导致显著跑输基准，本周选股进一步集中于低 ROE、高估值、高波动标的，风险敞口并未得到有效收敛。建议立即修复 LLM 风险解析机制，并在因子+LLM 审核流程中加入硬性阈值：ROE&gt;1%、PB&lt;历史 70% 分位、波动率&lt;15%；对 LLM 评分低于 5 分的标的直接剔除；同时引入动态止损（建议止损幅度 5%）以控制单只股票的极端回撤。下一阶段可考虑在因子模型中引入质量、估值和动量等正向因子权重，提升对低质量标的的剔除力度。若市场继续保持高波动，建议将仓位分散至 5~6 只更稳健的股票，以降低系统性风险。</p></aside>
+  </section>
+
+  <footer class="report-footer">
+    自动生成于 2026-04-08 22:18:27 · 点评由 MiniMax-M2.7 生成
+  </footer>
+</main>
+</body>
+</html>
