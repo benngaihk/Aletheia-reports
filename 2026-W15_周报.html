@@ -122,6 +122,11 @@ aside.llm-block p { margin: 6px 0; color: #24292f; font-size: 0.93em; }
 
 .empty { color: #8b949e; font-style: italic; padding: 10px 0; }
 
+.tracking-update { color: #656d76; font-size: 0.9em; margin: 0 0 10px; }
+.status-hold { color: #0969da; font-weight: 600; }
+.status-sold { color: #cf222e; font-weight: 600; }
+tr.status-sold td { background: #fff8f8; }
+
 footer.report-footer {
   margin-top: 32px;
   padding-top: 14px;
@@ -148,7 +153,7 @@ footer.report-footer {
 <main>
   <header class="report-header">
     <h1>周报 2026-W15</h1>
-    <p class="subtitle">复盘日 <strong>2026-04-07</strong> · 本周区间 2026-04-06 ~ 2026-04-12</p>
+    <p class="subtitle">复盘日 <strong>2026-04-09</strong> · 本周区间 2026-04-06 ~ 2026-04-12</p>
   </header>
 
   <section>
@@ -176,7 +181,7 @@ footer.report-footer {
 <div class="stat"><div class="stat-label">沪深300</div><div class="stat-val loss">-1.14%</div></div>
 <div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val win">+1.77%</div></div>
 </div>
-    <aside class="llm-block"><div class="llm-title">复盘洞察 · MiniMax</div><p>上周模型选出的8只股票平均收益0.62%，跑赢基准1.14%，实现超额收益1.77%。胜率仅37.5%，但神奇制药(+8.88%)和生物股份(+5.96%)两只大涨抵消了其余亏损。因子得分最高的几只股票（如东软集团、凯盛科技）并未显著跑赢，暗示因子仅是初筛，仍需风险过滤。上周所有标的的风险解析均出现“解析失败”，说明模型未能有效捕捉基本面风险，导致部分低质量标的拖累了整体表现。</p></aside>
+    
   </section>
 
   <section>
@@ -185,19 +190,28 @@ footer.report-footer {
 <dt>预测日</dt><dd>2026-04-07</dd>
 <dt>方法</dt><dd>因子+LLM审核</dd>
 <dt>候选 / 入选</dt><dd>16 / 8</dd>
+<dt>数据截至</dt><dd>2026-04-09</dd>
 <dt>生成时间</dt><dd>2026-04-07 17:41:15</dd>
 </dl>
 <div class="table-wrap"><table class="pick-table">
-<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">因子分</th><th class="num">LLM</th><th class="num">现价</th><th class="num">止损</th><th class="num">止盈</th><th class="num">月波动</th></tr></thead><tbody>
-<tr><td>2</td><td class="code">sz.301045</td><td>天禄科技</td><td class="num">1.135</td><td class="num llm-low">3.0</td><td class="num">37.31</td><td class="num">35.28</td><td class="num">49.33</td><td class="num">21.5%</td></tr>
-<tr><td>3</td><td class="code">sz.002666</td><td>德联集团</td><td class="num">1.132</td><td class="num llm-low">3.0</td><td class="num">5.37</td><td class="num">5.12</td><td class="num">6.54</td><td class="num">14.5%</td></tr>
-<tr><td>4</td><td class="code">sz.002029</td><td>七匹狼</td><td class="num">1.126</td><td class="num llm-low">3.0</td><td class="num">9.61</td><td class="num">9.19</td><td class="num">11.65</td><td class="num">14.1%</td></tr>
-<tr><td>6</td><td class="code">sz.000735</td><td>罗牛山</td><td class="num">1.096</td><td class="num llm-low">4.0</td><td class="num">6.62</td><td class="num">6.39</td><td class="num">7.70</td><td class="num">10.8%</td></tr>
-<tr><td>12</td><td class="code">sh.601616</td><td>广电电气</td><td class="num">0.985</td><td class="num llm-low">4.0</td><td class="num">4.63</td><td class="num">4.37</td><td class="num">5.98</td><td class="num">19.4%</td></tr>
-<tr><td>14</td><td class="code">sh.600021</td><td>上海电力</td><td class="num">0.974</td><td class="num ">5.0</td><td class="num">17.22</td><td class="num">16.55</td><td class="num">20.42</td><td class="num">12.4%</td></tr>
-<tr><td>15</td><td class="code">sh.601212</td><td>白银有色</td><td class="num">0.957</td><td class="num llm-low">3.0</td><td class="num">7.83</td><td class="num">7.44</td><td class="num">9.49</td><td class="num">14.1%</td></tr>
-<tr><td>16</td><td class="code">sz.002239</td><td>奥特佳</td><td class="num">0.951</td><td class="num llm-low">3.0</td><td class="num">2.94</td><td class="num">2.84</td><td class="num">3.38</td><td class="num">10.0%</td></tr>
+<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">现价</th><th class="num">收益</th><th class="num">止损</th><th class="num">止盈</th></tr></thead><tbody>
+<tr><td>2</td><td class="code">sz.301045</td><td>天禄科技</td><td class="num">37.31</td><td class="num">38.84</td><td class="num win">+4.10%</td><td class="num">35.28</td><td class="num">49.33</td></tr>
+<tr><td>3</td><td class="code">sz.002666</td><td>德联集团</td><td class="num">5.37</td><td class="num">5.41</td><td class="num win">+0.74%</td><td class="num">5.12</td><td class="num">6.54</td></tr>
+<tr><td>4</td><td class="code">sz.002029</td><td>七匹狼</td><td class="num">9.61</td><td class="num">9.43</td><td class="num loss">-1.87%</td><td class="num">9.19</td><td class="num">11.65</td></tr>
+<tr><td>6</td><td class="code">sz.000735</td><td>罗牛山</td><td class="num">6.62</td><td class="num">6.40</td><td class="num loss">-3.32%</td><td class="num">6.39</td><td class="num">7.70</td></tr>
+<tr><td>12</td><td class="code">sh.601616</td><td>广电电气</td><td class="num">4.63</td><td class="num">4.75</td><td class="num win">+2.59%</td><td class="num">4.37</td><td class="num">5.98</td></tr>
+<tr><td>14</td><td class="code">sh.600021</td><td>上海电力</td><td class="num">17.22</td><td class="num">18.21</td><td class="num win">+5.75%</td><td class="num">16.55</td><td class="num">20.42</td></tr>
+<tr><td>15</td><td class="code">sh.601212</td><td>白银有色</td><td class="num">7.83</td><td class="num">8.13</td><td class="num win">+3.83%</td><td class="num">7.44</td><td class="num">9.49</td></tr>
+<tr><td>16</td><td class="code">sz.002239</td><td>奥特佳</td><td class="num">2.94</td><td class="num">2.92</td><td class="num loss">-0.68%</td><td class="num">2.84</td><td class="num">3.38</td></tr>
 </tbody></table></div>
+<div class="summary-grid">
+<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val win">+1.39%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">62% <span class="stat-sub">(5/8)</span></div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+5.75%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-3.32%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+2.83%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-1.44%</div></div>
+</div>
 <h3>入选理由</h3>
 <ul class="reason-list">
 <li>
@@ -241,16 +255,11 @@ footer.report-footer {
 <div class="risk"><span class="risk-label">风险</span> ROE持续为0%或负值，行业排名165/194(底部20%)；近1/3/6/12月动量均为负(持续下跌)；历史最大回撤-70%；2018年暴跌-50.5%；2020年暴涨+171%后连续两年-30%</div>
 </li>
 </ul>
-    <aside class="llm-block"><div class="llm-title">选股点评 · MiniMax</div><p>本周选出的8只股票在因子得分上仍保持1.0~1.13的相对优势，但LLM评分普遍仅为3~5分，风险提示包括ROE长期为0、PB处于历史高位、历史回撤大等问题，显示出标的整体偏向低质量高估值。行业分布较为分散，涵盖科技、制造、农业、能源等多个领域，风险敞口集中在波动率高（10%~21%）和停牌异常（均超过200天）。建议在实际操作中严格设置止损位（多数在现价的‑5%附近），并关注停牌风险对流动性的可能影响。若LLM评分低于4的标的占比过高，可考虑将评分阈值提升至4以上，以过滤掉潜在的基本面陷阱。</p></aside>
-  </section>
-
-  <section>
-    <h2>三、整体总结与改进建议</h2>
-    <aside class="llm-block"><div class="llm-title">整体总结与改进建议 · MiniMax</div><p>总体来看，策略在基准下跌的环境中仍实现正超额收益，说明因子+LLM双层选股框架具备一定的alpha捕获能力。但上周胜率偏低且风险解析失效，提示我们需要加强风险层的过滤机制。针对本周标的，建议将ROE为零、PB&gt;90%分位且LLM评分低于4的股票剔除或降低仓位；同时，对停牌异常和历史大幅回撤的标的进行更为审慎的仓位控制。下周需关注大盘情绪是否回暖或继续调整，若基准进一步下跌，低估值、稳健ROE的标的将更具防御性，策略可适时转向质量因子占比更高的组合。</p></aside>
+    
   </section>
 
   <footer class="report-footer">
-    自动生成于 2026-04-08 15:40:00 · 点评由 MiniMax-M2.7 生成
+    自动生成于 2026-04-09 21:13:37 · 点评由 MiniMax-M2.7 生成 · 更新于 2026-04-09 21:13:37
   </footer>
 </main>
 </body>
