@@ -159,13 +159,29 @@ footer.report-footer {
   <section>
     <h2>一、上周复盘</h2>
     <dl class="meta-list">
-<dt>预测日</dt><dd>2026-04-03（持有 5 个交易日）</dd>
-<dt>方法</dt><dd>空仓</dd>
+<dt>预测日</dt><dd>2026-04-02（持有 5 个交易日）</dd>
+<dt>方法</dt><dd>因子+LLM审核</dd>
 </dl>
 <div class="table-wrap"><table class="review-table">
 <thead><tr><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">当前价</th><th class="num">收益</th><th>命中</th></tr></thead><tbody>
+<tr><td class="code">sh.600218</td><td>全柴动力</td><td class="num">8.94</td><td class="num">10.07</td><td class="num win">+12.64%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.600718</td><td>东软集团</td><td class="num">9.00</td><td class="num">9.09</td><td class="num win">+1.00%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.603861</td><td>白云电器</td><td class="num">15.88</td><td class="num">16.91</td><td class="num win">+6.49%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.603232</td><td>格尔软件</td><td class="num">19.16</td><td class="num">19.88</td><td class="num win">+3.76%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.600552</td><td>凯盛科技</td><td class="num">11.73</td><td class="num">13.49</td><td class="num win">+15.00%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.600201</td><td>生物股份</td><td class="num">14.78</td><td class="num">14.96</td><td class="num win">+1.22%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.600362</td><td>江西铜业</td><td class="num">43.26</td><td class="num">44.90</td><td class="num win">+3.79%</td><td class="hit win">✓</td></tr>
+<tr><td class="code">sh.601399</td><td>国机重装</td><td class="num">4.48</td><td class="num">4.60</td><td class="num win">+2.68%</td><td class="hit win">✓</td></tr>
 </tbody></table></div>
-    <aside class="llm-block"><div class="llm-title">复盘洞察 · MiniMax</div><p>上周采取空仓策略，主要基于市场波动性升高和前期模型信号不明朗。空仓导致本周收益为零，胜率和超额收益均无法统计，但有效规避了4月初可能的回调风险。由于未进行实际建仓，选股逻辑的验证被推迟，模型对因子的依赖性仍待观察。整体来看，空仓在不确定环境下是防守性选择，但若行情转向积极，可能错失潜在收益。</p></aside>
+<div class="summary-grid">
+<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val win">+5.82%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">100% <span class="stat-sub">(8/8)</span></div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+15.00%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">+1.00%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+3.52%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val win">+2.30%</div></div>
+</div>
+    <aside class="llm-block"><div class="llm-title">复盘洞察 · MiniMax</div><p>上周策略在 2026-04-02 选出的 8 只高风险、低 ROE 标的实现 100% 正收益，平均收益 5.82%，显著跑赢基准 3.52%，超额 2.30%。从因子分与 LLM 评分的分布看，factor 越高的股票 5 日收益越突出，验证了因子在捕捉短期动量方面的有效性。但所有标的均为 ROE 为 0%、历史大幅回撤且伴随大量涨停异动，说明本周期内市场对投机性极强的股票出现短期资金流入，进一步证实了‘高风险 + 事件驱动’逻辑在短线交易中被验证。与此同时，LLM 评分对涨幅的解释力有限，部分 6 分标的（白云电器、江西铜业）涨幅仅 3–6%，显示仅靠情绪分数难以精准预测幅度。整体来看，‘因子驱动 + LLM 过滤’在本次窗口内成功筛选出具备短期反弹潜力的标的，但也暴露出对基本面风险的忽视，需要在后续模型中加入更严格的基本面约束。</p></aside>
   </section>
 
   <section>
@@ -239,16 +255,16 @@ footer.report-footer {
 <div class="risk"><span class="risk-label">风险</span> ROE接近0; 行业排名291/352极差; 历史连续跌停2次(最长7天); 高波动</div>
 </li>
 </ul>
-    <aside class="llm-block"><div class="llm-title">选股点评 · MiniMax</div><p>本周选股采用因子得分结合LLM打分的方式，聚焦8只标的，风格偏向低估值、高波动的小盘股。多数标的ROE长期为0，基本面薄弱且历史回撤幅度大，风险集中在基本面恶化与高波动双重叠加。北纬科技因成交量极度缩量需警惕流动性风险；中信海直在2024年暴涨后动量全线为负，可能继续承压；天佑德酒连续多年下跌，趋势逆转难度大。整体来看，这批股票的集中风险在于行业竞争激烈、估值偏高且动量不佳，建议在止损/止盈严格执行的前提下，控制单只仓位占比，避免单一风险敞口过大。</p></aside>
+    <aside class="llm-block"><div class="llm-title">选股点评 · MiniMax</div><p>本周（2026-04-10）选入的 8 只股票整体因子得分已下降至 0.93–1.01，反映出信号强度减弱，且所有标的 ROE 仍接近 0，风险高度集中。从行业分布看，涵盖汽车、有色、饮料、旅游等多个高波动板块，且多数标的历史最大回撤超过 70%，成交额偏低，显示出典型的‘价值陷阱’或‘短期题材炒作’特征。其中 奥特佳、冰川有色 与 中信海直 过去一年涨幅分别达 115% 与 201% 后回落，需警惕动量反转风险；而 天佑德酒、三峡旅游 连续多年下跌且 PB 处于历史高位，基本面薄弱。建议在持仓时严格设定止损位（均已在表内给出），并对波动率最高的 奥特佳 与 德美化工 适度减仓，以防突发流动性枯竭。整体来看，这批股票的共同风险在于基本面极弱、波动极大且情绪驱动占主导，短期内可能出现剧烈分化，需要做好仓位管理和风险敞口控制。</p></aside>
   </section>
 
   <section>
     <h2>三、整体总结与改进建议</h2>
-    <aside class="llm-block"><div class="llm-title">整体总结与改进建议 · MiniMax</div><p>展望下周，需重点关注宏观经济数据发布及外围市场波动对A股情绪的传导，短期内系统性风险仍存。当前选股策略虽然在因子层面有正向排序，但基本面质量偏低，建议在因子模型中加入ROE、净利润增速等质量指标进行二次筛选，以提升组合的稳健性。可考虑将仓位向ROE&gt;5%且动量正面的标的倾斜，如若市场风险偏好回升，可适度扩大持仓规模；否则应保持轻仓或继续空仓观望。</p></aside>
+    <aside class="llm-block"><div class="llm-title">整体总结与改进建议 · MiniMax</div><p>上周的高胜率与显著超额收益表明，在市场短期情绪偏向高风险投机标的时，‘因子 + LLM’组合能够捕捉到快速反弹的机会。然而，本周因子下降、ROE 全零、波动率居高不下，说明模型当前更容易选出基本面薄弱的投机股，这在市场情绪转弱或流动性收紧时容易导致回撤。针对上述问题，建议在因子模型中加入 ROE、净利润等基本面正向约束，并对历史最大回撤和波动率设定阈值，以降低对极端风险标的的暴露。同时，可采用等权重或风险平价方式配置仓位，对高波动个股（如 奥特佳、德美化工）实行更严格的止损或仓位上限。下周需重点关注宏观流动性和行业情绪的变化，尤其是有色金属和汽车板块的供需信号，一旦出现系统性抛售，应及时降低整体敞口并保持足够的现金缓冲。</p></aside>
   </section>
 
   <footer class="report-footer">
-    自动生成于 2026-04-11 00:48:14 · 点评由 MiniMax-M2.7 生成
+    自动生成于 2026-04-11 00:57:03 · 点评由 MiniMax-M2.7 生成
   </footer>
 </main>
 </body>
