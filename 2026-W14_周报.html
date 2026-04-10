@@ -181,34 +181,71 @@ footer.report-footer {
 <div class="stat"><div class="stat-label">沪深300</div><div class="stat-val loss">-1.37%</div></div>
 <div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-2.79%</div></div>
 </div>
-    <aside class="llm-block"><div class="llm-title">复盘洞察 · MiniMax</div><p>上周(2026‑03‑27)策略选出的8只股票全部出现负收益，胜率为0%，显著低于基准的‑1.37%。平均回报为‑4.16%，超额收益为‑2.79%，说明因子模型在该阶段未能有效甄别强势标的。其中因子值最高的德联集团（因子1.53）反而录得‑6.92%的最差回报，显示因子强度与收益之间出现反向关系，市场对该类“高因子”股票的抛压更大。整体来看，策略在弱势市场中暴露了较大的下行风险，需要重新审视因子的有效性和权重设置。</p></aside>
+    
   </section>
 
   <section>
-    <h2>二、本周预测</h2>
+    <h2>二、本周持仓</h2>
     <dl class="meta-list">
-<dt>预测日</dt><dd>2026-04-03</dd>
-<dt>方法</dt><dd>空仓</dd>
-<dt>候选 / 入选</dt><dd>0 / 0</dd>
+<dt>预测日</dt><dd>2026-03-30</dd>
+<dt>方法</dt><dd>因子+LLM审核</dd>
+<dt>候选 / 入选</dt><dd>16 / 8</dd>
 <dt>数据截至</dt><dd>2026-04-10</dd>
-<dt>生成时间</dt><dd>2026-04-07 14:58:48</dd>
+<dt>生成时间</dt><dd>2026-03-31 08:14:19</dd>
 </dl>
 <div class="table-wrap"><table class="pick-table">
 <thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">现价</th><th class="num">收益</th></tr></thead><tbody>
+<tr><td>1</td><td class="code">sh.600718</td><td>东软集团</td><td class="num">9.11</td><td class="num loss">8.90 <small>(空仓清仓)</small></td><td class="num loss">-2.31%</td></tr>
+<tr><td>2</td><td class="code">sh.603859</td><td>能科科技</td><td class="num">36.90</td><td class="num loss">36.18 <small>(落榜卖出)</small></td><td class="num loss">-1.95%</td></tr>
+<tr><td>3</td><td class="code">sh.600552</td><td>凯盛科技</td><td class="num">12.10</td><td class="num loss">11.72 <small>(空仓清仓)</small></td><td class="num loss">-3.14%</td></tr>
+<tr><td>4</td><td class="code">sh.603686</td><td>福龙马</td><td class="num">18.54</td><td class="num loss">18.33 <small>(落榜卖出)</small></td><td class="num loss">-1.13%</td></tr>
+<tr><td>5</td><td class="code">sh.600613</td><td>神奇制药</td><td class="num">6.08</td><td class="num win">6.32 <small>(落榜卖出)</small></td><td class="num win">+3.95%</td></tr>
+<tr><td>6</td><td class="code">sh.600201</td><td>生物股份</td><td class="num">14.27</td><td class="num win">14.46 <small>(空仓清仓)</small></td><td class="num win">+1.33%</td></tr>
+<tr><td>7</td><td class="code">sh.603633</td><td>徕木股份</td><td class="num">7.67</td><td class="num loss">7.53 <small>(落榜卖出)</small></td><td class="num loss">-1.83%</td></tr>
+<tr><td>8</td><td class="code">sh.600278</td><td>东方创业</td><td class="num">7.36</td><td class="num loss">7.32 <small>(落榜卖出)</small></td><td class="num loss">-0.54%</td></tr>
 </tbody></table></div>
-<h3>入选理由</h3>
-<ul class="reason-list">
-</ul>
-    <aside class="llm-block"><div class="llm-title">选股点评 · MiniMax</div><p>本周(2026‑04‑03)模型判断无满足最低因子阈值的候选股，最终选择空仓。空仓策略在近期市场整体回调的背景下，能够有效规避进一步的下行风险。选股列表为空反映出当前市场环境下因子信号极度疲软，缺乏明确的做多机会。投资者应保持对宏观面和行业情绪的持续监控，以便在因子信号恢复时迅速捕捉机会。</p></aside>
+<div class="summary-grid">
+<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val loss">-0.70%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">25% <span class="stat-sub">(2/8)</span></div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+3.95%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-3.14%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+3.22%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-3.92%</div></div>
+</div>
   </section>
 
   <section>
-    <h2>三、整体总结与改进建议</h2>
-    <aside class="llm-block"><div class="llm-title">整体总结与改进建议 · MiniMax</div><p>上周策略的全面亏损暴露了单纯依赖因子选股的脆弱性，尤其在市场整体走弱的阶段。建议在模型中加入市场情绪或波动率指标，以实现动态的仓位调节或空仓切换。可考虑对因子阈值进行自适应的调整，或引入止损/止盈机制降低单只股票的最大回撤。进一步回测发现因子1.5以上的标的在该时期普遍出现超额下跌，后续应将其排除或降低权重。下周需关注宏观数据发布及行业轮动情况，待因子信号回升且市场企稳后再重新布局。</p></aside>
+    <h2>下周预测</h2>
+<dl class="meta-list">
+<dt>预测日</dt><dd>2026-04-02</dd>
+<dt>方法</dt><dd>因子+LLM审核</dd>
+<dt>候选 / 入选</dt><dd>16 / 8</dd>
+<dt>数据截至</dt><dd>2026-04-10</dd>
+<dt>生成时间</dt><dd>2026-04-02 23:32:11</dd>
+</dl>
+<div class="table-wrap"><table class="pick-table">
+<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">现价</th><th class="num">收益</th></tr></thead><tbody>
+<tr><td>1</td><td class="code">sh.600218</td><td>全柴动力</td><td class="num">8.94</td><td class="num loss">8.68 <small>(空仓清仓)</small></td><td class="num loss">-2.91%</td></tr>
+<tr><td>2</td><td class="code">sh.600718</td><td>东软集团</td><td class="num">9.00</td><td class="num loss">8.90 <small>(空仓清仓)</small></td><td class="num loss">-1.11%</td></tr>
+<tr><td>5</td><td class="code">sh.603861</td><td>白云电器</td><td class="num">15.88</td><td class="num win">15.92 <small>(空仓清仓)</small></td><td class="num win">+0.25%</td></tr>
+<tr><td>3</td><td class="code">sh.603232</td><td>格尔软件</td><td class="num">19.16</td><td class="num loss">19.01 <small>(空仓清仓)</small></td><td class="num loss">-0.78%</td></tr>
+<tr><td>4</td><td class="code">sh.600552</td><td>凯盛科技</td><td class="num">11.73</td><td class="num loss">11.72 <small>(空仓清仓)</small></td><td class="num loss">-0.09%</td></tr>
+<tr><td>6</td><td class="code">sh.600201</td><td>生物股份</td><td class="num">14.78</td><td class="num loss">14.46 <small>(空仓清仓)</small></td><td class="num loss">-2.17%</td></tr>
+<tr><td>8</td><td class="code">sh.600362</td><td>江西铜业</td><td class="num">43.26</td><td class="num loss">42.46 <small>(空仓清仓)</small></td><td class="num loss">-1.85%</td></tr>
+<tr><td>7</td><td class="code">sh.601399</td><td>国机重装</td><td class="num">4.48</td><td class="num loss">4.39 <small>(空仓清仓)</small></td><td class="num loss">-2.01%</td></tr>
+</tbody></table></div>
+<div class="summary-grid">
+<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val loss">-1.33%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">12% <span class="stat-sub">(1/8)</span></div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+0.25%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-2.91%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+3.52%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-4.85%</div></div>
+</div>
   </section>
 
   <footer class="report-footer">
-    自动生成于 2026-04-11 00:47:48 · 点评由 MiniMax-M2.7 生成
+    自动生成于 2026-04-11 01:06:41 · 点评由 MiniMax-M2.7 生成
   </footer>
 </main>
 </body>
