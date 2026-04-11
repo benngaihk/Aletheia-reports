@@ -3,55 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light">
 <title>周报 2026-W15</title>
 <style>
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-  color: #1f2328;
-  background: #f6f8fa;
-  margin: 0;
-  padding: 16px;
+  font-size: 16px; line-height: 1.65; color: #1f2328; background: #f6f8fa; margin: 0; padding: 16px;
 }
-main {
-  max-width: 760px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  padding: 24px 20px;
-}
-header.report-header {
-  border-bottom: 2px solid #0969da;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-}
+main { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 24px 20px; }
+header.report-header { border-bottom: 2px solid #0969da; padding-bottom: 12px; margin-bottom: 20px; }
 h1 { font-size: 1.6em; margin: 0 0 6px; color: #0969da; }
 .subtitle { color: #656d76; font-size: 0.9em; margin: 0; }
 section { margin: 28px 0; }
-h2 {
-  font-size: 1.25em;
-  color: #0969da;
-  border-left: 4px solid #0969da;
-  padding-left: 10px;
-  margin: 0 0 14px;
-}
-h3 { font-size: 1.05em; color: #24292f; margin: 18px 0 8px; }
-
-dl.meta-list {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 12px;
-  margin: 0 0 14px;
-  font-size: 0.92em;
-}
-dl.meta-list dt { color: #656d76; font-weight: normal; }
-dl.meta-list dd { margin: 0; color: #24292f; font-weight: 500; }
-
+h2 { font-size: 1.25em; color: #0969da; border-left: 4px solid #0969da; padding-left: 10px; margin: 0 0 14px; }
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px -4px; }
 table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
 th, td { padding: 7px 9px; text-align: left; border-bottom: 1px solid #eaecef; white-space: nowrap; }
@@ -59,93 +25,24 @@ th { background: #f6f8fa; color: #24292f; font-weight: 600; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 td.code { color: #656d76; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.95em; }
 tr:nth-child(even) td { background: #fbfcfd; }
-
 .win { color: #1a7f37; font-weight: 600; }
 .loss { color: #cf222e; font-weight: 600; }
 .muted { color: #8b949e; }
-td.hit { text-align: center; font-size: 1.1em; }
-.llm-low { color: #cf222e; }
-.llm-high { color: #1a7f37; }
-
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
-  margin: 14px 0 4px;
-}
-.stat {
-  background: #f6f8fa;
-  border: 1px solid #d1d9e0;
-  border-radius: 6px;
-  padding: 10px 12px;
-}
-.stat.highlight {
-  background: #ddf4ff;
-  border-color: #54aeff;
-}
+td.tag { text-align: center; font-size: 0.85em; font-weight: 600; }
+td.tag-tp { color: #1a7f37; background: #dafbe1; }
+td.tag-sl { color: #cf222e; background: #fff1f0; }
+td.tag-hold { color: #656d76; background: #f6f8fa; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 14px 0 4px; }
+.stat { background: #f6f8fa; border: 1px solid #d1d9e0; border-radius: 6px; padding: 10px 12px; }
+.stat.highlight { background: #ddf4ff; border-color: #54aeff; }
 .stat-label { font-size: 0.78em; color: #656d76; margin-bottom: 2px; }
 .stat-val { font-size: 1.15em; font-weight: 600; color: #24292f; font-variant-numeric: tabular-nums; }
-.stat-sub { font-size: 0.8em; color: #8b949e; font-weight: normal; }
-
-ul.reason-list { list-style: none; padding: 0; margin: 0; }
-ul.reason-list > li {
-  border-left: 3px solid #d1d9e0;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  background: #fbfcfd;
-  border-radius: 0 4px 4px 0;
-}
-.reason-head { margin-bottom: 4px; }
-.reason-head .code { color: #656d76; font-family: ui-monospace, Menlo, monospace; font-size: 0.88em; }
-.reason-head .name { font-weight: 600; color: #24292f; margin-left: 6px; }
-.reason-body { color: #424a53; font-size: 0.9em; }
-.risk { margin-top: 6px; font-size: 0.85em; color: #9a6700; background: #fff8c5; padding: 4px 8px; border-radius: 4px; }
-.risk-label { font-weight: 600; margin-right: 4px; }
-
-aside.llm-block {
-  background: linear-gradient(135deg, #f0f7ff 0%, #f6f8fa 100%);
-  border-left: 4px solid #0969da;
-  border-radius: 0 6px 6px 0;
-  padding: 12px 16px;
-  margin: 16px 0;
-}
-.llm-title {
-  font-weight: 600;
-  color: #0969da;
-  font-size: 0.9em;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-}
-.llm-title::before { content: "◆"; margin-right: 6px; font-size: 0.85em; }
-aside.llm-block p { margin: 6px 0; color: #24292f; font-size: 0.93em; }
-
-.empty { color: #8b949e; font-style: italic; padding: 10px 0; }
-
-.tracking-update { color: #656d76; font-size: 0.9em; margin: 0 0 10px; }
-.status-hold { color: #0969da; font-weight: 600; }
-.status-sold { color: #cf222e; font-weight: 600; }
-tr.status-sold td { background: #fff8f8; }
-
-footer.report-footer {
-  margin-top: 32px;
-  padding-top: 14px;
-  border-top: 1px solid #eaecef;
-  color: #8b949e;
-  font-size: 0.82em;
-  text-align: center;
-}
-
+footer.report-footer { margin-top: 32px; padding-top: 14px; border-top: 1px solid #eaecef;
+  color: #8b949e; font-size: 0.82em; text-align: center; }
 @media (max-width: 480px) {
-  body { padding: 8px; font-size: 15px; }
-  main { padding: 16px 12px; border-radius: 6px; }
-  h1 { font-size: 1.35em; }
-  h2 { font-size: 1.1em; }
-  table { font-size: 0.82em; }
-  th, td { padding: 6px 7px; }
+  body { padding: 8px; font-size: 15px; } main { padding: 16px 12px; border-radius: 6px; }
+  h1 { font-size: 1.35em; } table { font-size: 0.82em; } th, td { padding: 6px 7px; }
   .summary-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .stat { padding: 8px 10px; }
-  .stat-val { font-size: 1.05em; }
 }
 </style>
 </head>
@@ -157,95 +54,154 @@ footer.report-footer {
   </header>
 
   <section>
-    <h2>一、上周复盘</h2>
+    <h2>一、上周成绩</h2>
     <dl class="meta-list">
-<dt>预测日</dt><dd>2026-03-27（持有 5 个交易日）</dd>
-<dt>方法</dt><dd>trade.py 因子选股</dd>
+<dt>选股日</dt><dd>2026-04-03（持仓至下周五）</dd>
+<dt>策略</dt><dd>新配置 · 3月动量×3.0 · 5%止盈 · ATR止损 · 不补仓</dd>
 </dl>
-<div class="table-wrap"><table class="review-table">
-<thead><tr><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">当前价</th><th class="num">收益</th><th>命中</th></tr></thead><tbody>
-<tr><td class="code">sz.002666</td><td>德联集团</td><td class="num">5.49</td><td class="num">5.11</td><td class="num loss">-6.92%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002614</td><td>奥佳华</td><td class="num">6.24</td><td class="num">6.07</td><td class="num loss">-2.72%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002745</td><td>木林森</td><td class="num">8.73</td><td class="num">8.25</td><td class="num loss">-5.50%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002376</td><td>新北洋</td><td class="num">6.91</td><td class="num">6.74</td><td class="num loss">-2.46%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002449</td><td>国星光电</td><td class="num">7.89</td><td class="num">7.46</td><td class="num loss">-5.45%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002239</td><td>奥特佳</td><td class="num">3.04</td><td class="num">2.92</td><td class="num loss">-3.95%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002646</td><td>天佑德酒</td><td class="num">8.09</td><td class="num">7.82</td><td class="num loss">-3.34%</td><td class="hit loss">✗</td></tr>
-<tr><td class="code">sz.002344</td><td>海宁皮城</td><td class="num">4.45</td><td class="num">4.32</td><td class="num loss">-2.92%</td><td class="hit loss">✗</td></tr>
-</tbody></table></div>
+<div class="table-wrap"><table>
+<thead><tr><th>代码</th><th>名称</th><th class="num">买入价</th><th class="num">止损</th>
+<th class="num">止盈</th><th>操作</th><th>日期</th><th class="num">卖出价</th><th class="num">收益</th></tr></thead>
+<tbody><tr>
+<td class="code">sz.002931</td><td>锋龙股份</td>
+<td class="num">65.45</td>
+<td class="num">64.44</td>
+<td class="num">68.72</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-09</td>
+<td class="num">68.74</td>
+<td class="num win">+5.03%</td>
+</tr><tr>
+<td class="code">sh.600482</td><td>中国动力</td>
+<td class="num">32.80</td>
+<td class="num">32.31</td>
+<td class="num">34.44</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-08</td>
+<td class="num">35.00</td>
+<td class="num win">+6.71%</td>
+</tr><tr>
+<td class="code">sz.300834</td><td>星辉环材</td>
+<td class="num">46.72</td>
+<td class="num">45.89</td>
+<td class="num">49.06</td>
+<td class="tag tag-sl">止损</td>
+<td>04-08</td>
+<td class="num">45.89</td>
+<td class="num loss">-1.77%</td>
+</tr><tr>
+<td class="code">sh.688309</td><td>恒誉环保</td>
+<td class="num">59.15</td>
+<td class="num">57.95</td>
+<td class="num">62.11</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-08</td>
+<td class="num">62.37</td>
+<td class="num win">+5.44%</td>
+</tr><tr>
+<td class="code">sz.001267</td><td>汇绿生态</td>
+<td class="num">40.41</td>
+<td class="num">39.53</td>
+<td class="num">42.43</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-08</td>
+<td class="num">44.30</td>
+<td class="num win">+9.63%</td>
+</tr><tr>
+<td class="code">sz.301362</td><td>民爆光电</td>
+<td class="num">103.00</td>
+<td class="num">101.24</td>
+<td class="num">108.15</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-07</td>
+<td class="num">114.01</td>
+<td class="num win">+10.69%</td>
+</tr><tr>
+<td class="code">sz.300658</td><td>延江股份</td>
+<td class="num">27.35</td>
+<td class="num">26.57</td>
+<td class="num">28.72</td>
+<td class="tag tag-sl">止损</td>
+<td>04-09</td>
+<td class="num">26.57</td>
+<td class="num loss">-2.85%</td>
+</tr><tr>
+<td class="code">sh.600722</td><td>金牛化工</td>
+<td class="num">13.20</td>
+<td class="num">12.67</td>
+<td class="num">13.86</td>
+<td class="tag tag-tp">止盈</td>
+<td>04-07</td>
+<td class="num">14.52</td>
+<td class="num win">+10.00%</td>
+</tr></tbody></table></div>
 <div class="summary-grid">
-<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val loss">-4.16%</div></div>
-<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">0% <span class="stat-sub">(0/8)</span></div></div>
-<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">-2.46%</div></div>
-<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-6.92%</div></div>
-<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val loss">-1.37%</div></div>
-<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val loss">-2.79%</div></div>
+<div class="stat"><div class="stat-label">组合收益</div><div class="stat-val win">+5.36%</div></div>
+<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">6/8</div></div>
+<div class="stat"><div class="stat-label">止盈/止损</div><div class="stat-val">6盈 2损</div></div>
+<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+10.69%</div></div>
+<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">-2.85%</div></div>
+<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+4.41%</div></div>
+<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val win">+0.95%</div></div>
 </div>
-    
   </section>
 
   <section>
-    <h2>二、本周持仓</h2>
+    <h2>二、本周预测</h2>
     <dl class="meta-list">
-<dt>预测日</dt><dd>2026-04-02</dd>
-<dt>方法</dt><dd>因子+LLM审核</dd>
-<dt>候选 / 入选</dt><dd>16 / 8</dd>
-<dt>数据截至</dt><dd>2026-04-10</dd>
-<dt>生成时间</dt><dd>2026-04-02 23:32:11</dd>
+<dt>选股日</dt><dd>2026-04-10（下周持仓）</dd>
+<dt>策略</dt><dd>新配置 · 3月动量×3.0 · 5%止盈 · ATR止损 · 不补仓</dd>
+<dt>持仓数</dt><dd>8</dd>
 </dl>
-<div class="table-wrap"><table class="pick-table">
-<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">现价</th><th class="num">收益</th></tr></thead><tbody>
-<tr><td>1</td><td class="code">sh.600218</td><td>全柴动力</td><td class="num">8.94</td><td class="num">10.07</td><td class="num win">+12.64%</td></tr>
-<tr><td>2</td><td class="code">sh.600718</td><td>东软集团</td><td class="num">9.00</td><td class="num">9.09</td><td class="num win">+1.00%</td></tr>
-<tr><td>5</td><td class="code">sh.603861</td><td>白云电器</td><td class="num">15.88</td><td class="num">16.91</td><td class="num win">+6.49%</td></tr>
-<tr><td>3</td><td class="code">sh.603232</td><td>格尔软件</td><td class="num">19.16</td><td class="num">19.88</td><td class="num win">+3.76%</td></tr>
-<tr><td>4</td><td class="code">sh.600552</td><td>凯盛科技</td><td class="num">11.73</td><td class="num">13.49</td><td class="num win">+15.00%</td></tr>
-<tr><td>6</td><td class="code">sh.600201</td><td>生物股份</td><td class="num">14.78</td><td class="num">14.96</td><td class="num win">+1.22%</td></tr>
-<tr><td>8</td><td class="code">sh.600362</td><td>江西铜业</td><td class="num">43.26</td><td class="num">44.90</td><td class="num win">+3.79%</td></tr>
-<tr><td>7</td><td class="code">sh.601399</td><td>国机重装</td><td class="num">4.48</td><td class="num">4.60</td><td class="num win">+2.68%</td></tr>
-</tbody></table></div>
-<div class="summary-grid">
-<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val win">+5.82%</div></div>
-<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">100% <span class="stat-sub">(8/8)</span></div></div>
-<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+15.00%</div></div>
-<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">+1.00%</div></div>
-<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+3.52%</div></div>
-<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val win">+2.30%</div></div>
-</div>
-  </section>
-
-  <section>
-    <h2>下周预测</h2>
-<dl class="meta-list">
-<dt>预测日</dt><dd>2026-04-10</dd>
-<dt>方法</dt><dd>因子+LLM审核</dd>
-<dt>候选 / 入选</dt><dd>16 / 8</dd>
-<dt>数据截至</dt><dd>2026-04-10</dd>
-<dt>生成时间</dt><dd>2026-04-11 00:23:54</dd>
-</dl>
-<div class="table-wrap"><table class="pick-table">
-<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">入选价</th><th class="num">现价</th><th class="num">收益</th></tr></thead><tbody>
-<tr><td>8</td><td class="code">sz.002239</td><td>奥特佳</td><td class="num">3.04</td><td class="num">3.04</td><td class="num win">+0.00%</td></tr>
-<tr><td>9</td><td class="code">sh.601212</td><td>白银有色</td><td class="num">8.04</td><td class="num">8.04</td><td class="num win">+0.00%</td></tr>
-<tr><td>10</td><td class="code">sz.002148</td><td>北纬科技</td><td class="num">7.61</td><td class="num">7.61</td><td class="num win">+0.00%</td></tr>
-<tr><td>11</td><td class="code">sz.002646</td><td>天佑德酒</td><td class="num">8.02</td><td class="num">8.02</td><td class="num win">+0.00%</td></tr>
-<tr><td>12</td><td class="code">sz.000099</td><td>中信海直</td><td class="num">17.18</td><td class="num">17.18</td><td class="num win">+0.00%</td></tr>
-<tr><td>13</td><td class="code">sz.002627</td><td>三峡旅游</td><td class="num">7.54</td><td class="num">7.54</td><td class="num win">+0.00%</td></tr>
-<tr><td>15</td><td class="code">sz.002614</td><td>奥佳华</td><td class="num">6.32</td><td class="num">6.32</td><td class="num win">+0.00%</td></tr>
-<tr><td>16</td><td class="code">sz.002054</td><td>德美化工</td><td class="num">8.68</td><td class="num">8.68</td><td class="num win">+0.00%</td></tr>
-</tbody></table></div>
-<div class="summary-grid">
-<div class="stat"><div class="stat-label">平均收益</div><div class="stat-val win">+0.00%</div></div>
-<div class="stat"><div class="stat-label">胜率</div><div class="stat-val">0% <span class="stat-sub">(0/8)</span></div></div>
-<div class="stat"><div class="stat-label">最佳</div><div class="stat-val win">+0.00%</div></div>
-<div class="stat"><div class="stat-label">最差</div><div class="stat-val loss">+0.00%</div></div>
-<div class="stat"><div class="stat-label">沪深300</div><div class="stat-val win">+0.00%</div></div>
-<div class="stat highlight"><div class="stat-label">超额</div><div class="stat-val win">+0.00%</div></div>
-</div>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>代码</th><th>名称</th><th class="num">买入价</th>
+<th class="num">止损价</th><th class="num">止盈价</th></tr></thead>
+<tbody><tr>
+<td>1</td><td class="code">sz.301093</td><td>华兰股份</td>
+<td class="num">87.34</td>
+<td class="num loss">85.62</td>
+<td class="num win">91.71</td>
+</tr><tr>
+<td>2</td><td class="code">sz.002082</td><td>万邦德</td>
+<td class="num">29.80</td>
+<td class="num loss">28.96</td>
+<td class="num win">31.29</td>
+</tr><tr>
+<td>3</td><td class="code">sh.603618</td><td>杭电股份</td>
+<td class="num">24.12</td>
+<td class="num loss">23.37</td>
+<td class="num win">25.33</td>
+</tr><tr>
+<td>4</td><td class="code">sz.001267</td><td>汇绿生态</td>
+<td class="num">43.91</td>
+<td class="num loss">43.01</td>
+<td class="num win">46.11</td>
+</tr><tr>
+<td>5</td><td class="code">sz.301045</td><td>天禄科技</td>
+<td class="num">40.82</td>
+<td class="num loss">40.23</td>
+<td class="num win">42.86</td>
+</tr><tr>
+<td>6</td><td class="code">sh.688309</td><td>恒誉环保</td>
+<td class="num">67.25</td>
+<td class="num loss">66.01</td>
+<td class="num win">70.61</td>
+</tr><tr>
+<td>7</td><td class="code">sz.002440</td><td>闰土股份</td>
+<td class="num">12.25</td>
+<td class="num loss">12.09</td>
+<td class="num win">12.86</td>
+</tr><tr>
+<td>8</td><td class="code">sz.002378</td><td>章源钨业</td>
+<td class="num">31.48</td>
+<td class="num loss">30.97</td>
+<td class="num win">33.05</td>
+</tr></tbody></table></div>
+<p class="muted" style="font-size:0.85em;">操作：周五14:50下单买入 · 下周盘中触发止盈(+5%)或止损(ATR)自动卖出 · 未触发则持有至下周五</p>
   </section>
 
   <footer class="report-footer">
-    自动生成于 2026-04-11 07:33:29 · 点评由 MiniMax-M2.7 生成
+    自动生成 · 策略: 3月动量×3.0 + ATR0.3止损 + 5%止盈 · 不补仓
   </footer>
 </main>
 </body>
